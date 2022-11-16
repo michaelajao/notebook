@@ -60,3 +60,25 @@ begin # plot
     plot!(sol, vars=(1,3), label=nothing, lw = 3, c=:black, ls=:dash)
     xlims!(0.0,27.5)
 end
+
+
+
+function sirs(; beta, gamma, delta)
+    function f!(du,u,p,t)
+        du[1] = gamma * (1 - u[1] - u[2]) - beta * u[1] * u[2]
+        du[2] = beta * u[1] * u[2] - gamma * u[2]
+    end
+
+    u0 = [0.99; 0.0001]
+    tspan = (0.0,60.0)
+    prob = ODEProblem(f!,u0,tspan)
+    u = solve(prob, Tsit5(), reltol=1e-8, abstol=1e-8)   # Fifth order Tsitouras method
+    u0 = [ elem[1] for elem in u.u]
+    u1 = [ elem[2] for elem in u.u]
+
+    plot(u.t, u0,linewidth=5,title="Epidemic simulation using the SIRS model",
+         xaxis="Time (t)",yaxis="% of population)",label="Recovered") # legend=false
+    plot!(u.t, u1,lw=3,ls=:dash,label="Susceptible")
+end
+
+sirs( beta = 2.0, gamma = 0.2, delta = 0.1)
