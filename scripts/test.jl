@@ -67,5 +67,28 @@ plot!(normalized_time_series, label="Normalized Data")
 
 
 
+using GaussianProcesses, Plots, Random
+
+function normalize_and_plot(y, new_times)
+    # Fit a Gaussian process regressor to the time series data
+    gpr = gaussian_process(y, MeanZero(), SE(1.0,0.0))
+
+    # Make predictions about future values of the time series
+    mean, cov = predict(gpr, new_times)
+
+    # Plot the original data and the predicted values
+    plot(new_times, y, label="Original Data")
+    plot!(new_times, mean, label="Predicted Values")
+end
 
 
+y = selected_rows[!, :confirmed]
+
+new_times = selected_rows[!, :dates]
+
+normalize_and_plot(y, new_times)
+
+#Simulate the data
+Random.seed!(203617)
+
+using ScikitLearn.
