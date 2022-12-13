@@ -50,45 +50,170 @@ selected_rows = filter(row -> start_date <= row.dates <= end_date, us_data)
     label=false)
 
 
-x = selected_rows[!, :dates]
-y = selected_rows[!, :confirmed]
+# x = selected_rows[!, :dates]
+# y = selected_rows[!, :confirmed]
 
-gpr = GP()
+# gpr = GP()
 
 
-using Plots
+# # Plot the original time series data
+# plot(x, y, label="Original Data")
 
-# Plot the original time series data
-plot(x, y, label="Original Data")
-
-# Plot the normalized time series data
-plot!(normalized_time_series, label="Normalized Data")
+# # Plot the normalized time series data
+# plot!(normalized_time_series, label="Normalized Data")
 
 
 
 
-using GaussianProcesses, Plots, Random
+# using GaussianProcesses, Plots, Random
 
-function normalize_and_plot(y, new_times)
-    # Fit a Gaussian process regressor to the time series data
-    gpr = gaussian_process(y, MeanZero(), SE(1.0,0.0))
+# function normalize_and_plot(y, new_times)
+#     # Fit a Gaussian process regressor to the time series data
+#     gpr = gaussian_process(y, MeanZero(), SE(1.0,0.0))
 
-    # Make predictions about future values of the time series
-    mean, cov = predict(gpr, new_times)
+#     # Make predictions about future values of the time series
+#     mean, cov = predict(gpr, new_times)
 
-    # Plot the original data and the predicted values
-    plot(new_times, y, label="Original Data")
-    plot!(new_times, mean, label="Predicted Values")
-end
+#     # Plot the original data and the predicted values
+#     plot(new_times, y, label="Original Data")
+#     plot!(new_times, mean, label="Predicted Values")
+# end
 
 
-y = selected_rows[!, :confirmed]
+# y = selected_rows[!, :confirmed]
 
-new_times = selected_rows[!, :dates]
+# new_times = selected_rows[!, :dates]
 
-normalize_and_plot(y, new_times)
+# normalize_and_plot(y, new_times)
 
-#Simulate the data
-Random.seed!(203617)
+# #Simulate the data
+# Random.seed!(203617)
 
-using ScikitLearn.
+# using DifferentialEquations
+# using Plots
+
+# #Initialize parameters
+# beta = 0.2
+# gamma = 0.1
+# delta = 0.01
+# sigma = 0.05
+
+# #Initialize population sizes
+# s0 = 0.99
+# e0 = 0.11
+# i0 = 0.01
+# r0 = 0
+
+# #Define SEIR model
+# function SEIR(du, u, p, t)
+# S, E, I, R = u
+# du[1] = -beta*S*I
+# du[2] = beta*S*I - sigma*E
+# du[3] = sigma*E - gamma*I
+# du[4] = gamma*I
+# end
+
+# #Define initial conditions
+# u0 = [s0, e0, i0, r0]
+
+# #Define time range for simulation
+# tspan = (0.0, 100.0)
+
+# #Solve SEIR model
+# prob = ODEProblem(SEIR, u0, tspan)
+# sol = solve(prob, Tsit5())
+
+# #Extract data from solution
+# s = sol[1,:]
+# e = sol[2,:]
+# i = sol[3,:]
+# r = sol[4,:]
+
+# #Plot results
+# plot(sol.t, s, label="Susceptible")
+# plot!(sol.t, e, label="Exposed")
+# plot!(sol.t, i, label="Infected")
+# plot!(sol.t, r, label="Recovered")
+
+# #Calculate demand for vaccine
+# vaccine_demand = i .* s
+
+# #Optimize vaccine allocation
+# vaccine_allocation = optimize_vaccine_allocation(vaccine_demand)
+
+# println("Optimized vaccine allocation: ", vaccine_allocation)
+
+# # Import necessary packages
+# using DifferentialEquations, Optim, Plots
+
+# # Define function to solve the SEIR model
+# function seir_model(du, u, p, t)
+#   # Unpack parameters
+#   β, γ, δ, σ = p
+  
+#   # Unpack state variables
+#   S, E, I, R = u
+  
+#   # Define the differential equations for the SEIR model
+#   dS = -β * S * I
+#   dE = β * S * I - γ * E - σ * E
+#   dI = γ * E - δ * I
+#   dR = δ * I
+  
+#   # Set the values of the derivatives
+#   du .= [dS, dE, dI, dR]
+# end
+
+# # Define function to optimize the SEIR model parameters
+# function optimize_seir_model(p, t, y)
+#   # Solve the SEIR model using the given parameters
+#   u0 = [y[1], y[2], y[3], 0]
+#   prob = ODEProblem(seir_model, u0, t, p)
+#   sol = solve(prob,Tsit5())
+  
+#   # Compute the sum of squared errors between the model solution and the data
+#   sse = sum((sol.u .- y).^2)
+  
+#   # Return the sum of squared errors
+#   return sse
+# end
+
+# # Define initial parameter values
+# p0 = [0.5, 0.2, 0.1, 0.1]
+
+# # Define time points
+# t = range(0, stop=365, length=365)
+
+# # Load COVID-19 timeseries data
+# # (
+
+# # load required libraries
+# using DifferentialEquations, Plots
+
+# # define SEIR model
+# function seir(du, u, p, t)
+#   S, E, I, R = u
+#   β, γ = p
+  
+#   du[1] = -β * S * I
+#   du[2] = β * S * I - γ * E
+#   du[3] = γ * E - γ * I
+#   du[4] = γ * I
+# end
+
+# # define initial values and parameters
+# u0 = [S₀, E₀, I₀, R₀]
+# p = [β, γ]
+
+# # define time span
+# tspan = (0.0, 365.0)
+
+# # solve ODE using the `seir` model
+# prob = ODEProblem(seir, u0, tspan, p)
+# sol = solve(prob, Tsit5())
+
+# # extract the demand data for vaccine allocation
+# demand = sol.u[3, :]
+
+# # plot the demand data over time
+# plot(sol.t, demand, xlabel="Time (days)", ylabel="Demand for vaccine")

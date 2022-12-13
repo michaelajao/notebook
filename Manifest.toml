@@ -2,7 +2,7 @@
 
 julia_version = "1.8.3"
 manifest_format = "2.0"
-project_hash = "0ead8c222efd0829dd5e887c1addd1da1d909609"
+project_hash = "3ad37d8c47918db34ca93b3eae52414701037b10"
 
 [[deps.ARFFFiles]]
 deps = ["CategoricalArrays", "Dates", "Parsers", "Tables"]
@@ -74,9 +74,9 @@ version = "1.1.1"
 
 [[deps.ArnoldiMethod]]
 deps = ["LinearAlgebra", "Random", "StaticArrays"]
-git-tree-sha1 = "62e51b39331de8911e4a7ff6f5aaf38a5f4cc0ae"
+git-tree-sha1 = "f87e559f87a45bece9c9ed97458d3afe98b1ebb9"
 uuid = "ec485272-7323-5ecc-a04f-4719b315124d"
-version = "0.2.0"
+version = "0.1.0"
 
 [[deps.Arpack]]
 deps = ["Arpack_jll", "Libdl", "LinearAlgebra", "Logging"]
@@ -1254,6 +1254,12 @@ git-tree-sha1 = "7f3efec06033682db852f8b3bc3c1d2b0a0ab066"
 uuid = "38a345b3-de98-5d2b-a5d3-14cd9215e700"
 version = "2.36.0+0"
 
+[[deps.LightGraphs]]
+deps = ["ArnoldiMethod", "DataStructures", "Distributed", "Inflate", "LinearAlgebra", "Random", "SharedArrays", "SimpleTraits", "SparseArrays", "Statistics"]
+git-tree-sha1 = "432428df5f360964040ed60418dd5601ecd240b6"
+uuid = "093fc24a-ae57-5d10-9952-331d41423f4d"
+version = "1.3.5"
+
 [[deps.LineSearches]]
 deps = ["LinearAlgebra", "NLSolversBase", "NaNMath", "Parameters", "Printf"]
 git-tree-sha1 = "7bbea35cec17305fc70a0e5b4641477dc0789d9d"
@@ -1837,9 +1843,9 @@ version = "0.6.11"
 
 [[deps.RecursiveArrayTools]]
 deps = ["Adapt", "ArrayInterfaceCore", "ArrayInterfaceStaticArraysCore", "ChainRulesCore", "DocStringExtensions", "FillArrays", "GPUArraysCore", "IteratorInterfaceExtensions", "LinearAlgebra", "RecipesBase", "StaticArraysCore", "Statistics", "SymbolicIndexingInterface", "Tables", "ZygoteRules"]
-git-tree-sha1 = "3d69184485a30669c35d02ca383acff78af391d1"
+git-tree-sha1 = "53d040e68b5afff59a9eb1f692d9a08369b07f61"
 uuid = "731186ca-8d62-57ce-b412-fbd966d074cd"
-version = "2.33.0"
+version = "2.34.0"
 
 [[deps.RecursiveFactorization]]
 deps = ["LinearAlgebra", "LoopVectorization", "Polyester", "SnoopPrecompile", "StrideArraysCore", "TriangularSolve"]
@@ -2161,9 +2167,9 @@ version = "5.2.1+0"
 
 [[deps.SymbolicIndexingInterface]]
 deps = ["DocStringExtensions"]
-git-tree-sha1 = "bb81a8b0e1278d33a7b89232af1821fad5ded308"
+git-tree-sha1 = "c45c06465cbdb334bb9f53a973217c217fcf5bdd"
 uuid = "2efcf032-c050-4f8e-a9bb-153293bab1f5"
-version = "0.1.1"
+version = "0.2.0"
 
 [[deps.TOML]]
 deps = ["Dates"]
