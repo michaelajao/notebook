@@ -18,13 +18,13 @@ function seird!(du, u, p, t)
 end
 
 # Initial conditions
-u0 = [999999, 1, 0, 0, 0]
+u0 = [999999, 100, 10, 0, 0]
 
 # Parameters
 p = [0.05, 1000000, 0.7, 0.2, 0.1, 0.01, 0.01, 0.01]
 
 # Time span
-tspan = (0.0, 100.0)
+tspan = (0.0, 200.0)
 
 # Solve the ODE system
 prob = ODEProblem(seird!, u0, tspan, p)
