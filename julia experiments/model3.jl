@@ -39,3 +39,5 @@ sol = solve(prob, Tsit5(), dt=dt)
 plot(sol, label=["S" "E" "I" "R" "D"], xlabel="Time", ylabel="Proportion", title="SEIRD Model")
 
 savefig("data/SEIRD.png")
+using Pkg
+Pkg.instantiate()
