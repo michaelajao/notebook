@@ -217,3 +217,68 @@ selected_rows = filter(row -> start_date <= row.dates <= end_date, us_data)
 
 # # plot the demand data over time
 # plot(sol.t, demand, xlabel="Time (days)", ylabel="Demand for vaccine")
+
+
+
+using Graphs
+
+# Function to generate a small world network
+function small_world_network(n, k, beta)
+    g = Graph(n)
+    for i in 1:n
+        for j in (i+1):(i+k)
+            add_edge!(g, i, j % n + 1)
+        end
+    end
+
+    # rewiring edges with probability beta
+    for i in 1:n
+        for j in neighbors(g, i)
+            if rand() < beta
+                neighbor = rand(1:n)
+                if !has_edge(g, i, neighbor)
+                    add_edge!(g, i, neighbor)
+                    rem_edge!(g, i, j)
+                end
+            end
+        end
+    end
+    return g
+end
+
+# Generate a small world network with n = 1000, k = 10, beta = 0.1
+g = small_world_network(1000, 10, 0.1)
+
+
+using Graphs
+using Plots
+
+# Function to generate a small world network
+function small_world_network(n, k, beta)
+    g = Graph(n)
+    for i in 1:n
+        for j in (i+1):(i+k)
+            add_edge!(g, i, j % n + 1)
+        end
+    end
+
+    # rewiring edges with probability beta
+    for i in 1:n
+        for j in neighbors(g, i)
+            if rand() < beta
+                neighbor = rand(1:n)
+                if !has_edge(g, i, neighbor)
+                    add_edge!(g, i, neighbor)
+                    rem_edge!(g, i, j)
+                end
+            end
+        end
+    end
+    return g
+end
+
+# Generate a small world network with n = 1000, k = 10, beta = 0.1
+g = small_world_network(1000, 10, 0.1)
+
+# Plot the graph
+plot(g, nodelabel = 1:nv(g), layout = (x,y) -> [(cos(2 * pi * i / nv(g)), sin(2 * pi * i / nv(g))) for i in 1:nv(g)])

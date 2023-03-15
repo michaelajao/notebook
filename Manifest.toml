@@ -2,7 +2,11 @@
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
+<<<<<<< Updated upstream
 project_hash = "ec822b1d0336b2a8f054f3385209267e9f5e6d28"
+=======
+project_hash = "5fdb7c696f9994463e4add37c1aa27ac713af6bf"
+>>>>>>> Stashed changes
 
 [[deps.ARFFFiles]]
 deps = ["CategoricalArrays", "Dates", "Parsers", "Tables"]
@@ -149,6 +153,11 @@ deps = ["FillArrays", "LinearAlgebra", "SparseArrays"]
 git-tree-sha1 = "4aff5fa660eb95c2e0deb6bcdabe4d9a96bc4667"
 uuid = "4c555306-a7a7-4459-81d9-ec55ddd5c99a"
 version = "0.8.18"
+
+[[deps.ArrayTools]]
+git-tree-sha1 = "c7218fcb9e570633115447768f5f728fc07d2029"
+uuid = "1dc0ca97-c5ce-4e77-ac6d-c576ac9d7f27"
+version = "0.2.5"
 
 [[deps.Artifacts]]
 uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
@@ -397,6 +406,7 @@ version = "4.6.0"
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
 version = "1.0.1+0"
+<<<<<<< Updated upstream
 
 [[deps.ComponentArrays]]
 deps = ["ArrayInterface", "ChainRulesCore", "LinearAlgebra", "Requires"]
@@ -408,6 +418,8 @@ version = "0.13.7"
 git-tree-sha1 = "02d2316b7ffceff992f3096ae48c7829a8aa0638"
 uuid = "b152e2b5-7a66-4b01-a709-34e65c35f657"
 version = "0.1.3"
+=======
+>>>>>>> Stashed changes
 
 [[deps.CompositionsBase]]
 git-tree-sha1 = "455419f7e328a1a2493cabc6428d79e951349769"
@@ -1130,6 +1142,12 @@ git-tree-sha1 = "a3f24677c21f5bbe9d2a714f95dcd58337fb2856"
 uuid = "82899510-4779-5014-852e-03e436cf321d"
 version = "1.0.0"
 
+[[deps.JLD2]]
+deps = ["FileIO", "MacroTools", "Mmap", "OrderedCollections", "Pkg", "Printf", "Reexport", "TranscodingStreams", "UUIDs"]
+git-tree-sha1 = "c3244ef42b7d4508c638339df1bdbf4353e144db"
+uuid = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+version = "0.4.30"
+
 [[deps.JLFzf]]
 deps = ["Pipe", "REPL", "Random", "fzf_jll"]
 git-tree-sha1 = "f377670cda23b6b7c1c0b3893e37451c5c1a2185"
@@ -1387,6 +1405,18 @@ git-tree-sha1 = "432428df5f360964040ed60418dd5601ecd240b6"
 uuid = "093fc24a-ae57-5d10-9952-331d41423f4d"
 version = "1.3.5"
 
+[[deps.LightOSM]]
+deps = ["DataStructures", "Graphs", "HTTP", "JSON", "LightXML", "MetaGraphs", "NearestNeighbors", "Parameters", "QuickHeaps", "SimpleWeightedGraphs", "SparseArrays", "SpatialIndexing", "StaticArrays", "StaticGraphs", "Statistics"]
+git-tree-sha1 = "4a0ebcf9a80b9ac98242016aff608afc39f61f4b"
+uuid = "d1922b25-af4e-4ba3-84af-fe9bea896051"
+version = "0.2.8"
+
+[[deps.LightXML]]
+deps = ["Libdl", "XML2_jll"]
+git-tree-sha1 = "e129d9391168c677cd4800f5c0abb1ed8cb3794f"
+uuid = "9c8b4983-aa76-5018-a973-4c85ecc9e179"
+version = "0.9.0"
+
 [[deps.LineSearches]]
 deps = ["LinearAlgebra", "NLSolversBase", "NaNMath", "Parameters", "Printf"]
 git-tree-sha1 = "7bbea35cec17305fc70a0e5b4641477dc0789d9d"
@@ -1591,6 +1621,7 @@ git-tree-sha1 = "c13304c81eec1ed3af7fc20e75fb6b26092a1102"
 uuid = "442fdcdd-2543-5da2-b0f3-8c86c306513e"
 version = "0.3.2"
 
+<<<<<<< Updated upstream
 [[deps.Memoize]]
 deps = ["MacroTools"]
 git-tree-sha1 = "2b1dfcba103de714d31c033b5dacc2e4a12c7caa"
@@ -1602,6 +1633,13 @@ deps = ["AutoHashEquals", "DataStructures", "Dates", "DocStringExtensions", "Par
 git-tree-sha1 = "0f39bc7f71abdff12ead4fc4a7d998fb2f3c171f"
 uuid = "e9d8d322-4543-424a-9be4-0cc815abe26c"
 version = "1.3.5"
+=======
+[[deps.MetaGraphs]]
+deps = ["Graphs", "JLD2", "Random"]
+git-tree-sha1 = "1130dbe1d5276cb656f6e1094ce97466ed700e5a"
+uuid = "626554b9-1ddb-594c-aa3c-2596fe9399a5"
+version = "0.7.2"
+>>>>>>> Stashed changes
 
 [[deps.MicroCollections]]
 deps = ["BangBang", "InitialValues", "Setfield"]
@@ -2025,6 +2063,12 @@ git-tree-sha1 = "911c64c204e7ecabfd1872eb93c49b4e7c701f02"
 uuid = "2aef5ad7-51ca-5a8f-8e88-e75cf067b44b"
 version = "0.9.3"
 
+[[deps.QuickHeaps]]
+deps = ["ArrayTools", "DataStructures"]
+git-tree-sha1 = "ff720a9c8356004cc9e3d109cdcb327510345edc"
+uuid = "30b38841-0f52-47f8-a5f8-18d5d4064379"
+version = "0.1.2"
+
 [[deps.REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
 uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
@@ -2278,6 +2322,12 @@ git-tree-sha1 = "5d7e3f4e11935503d3ecaf7186eac40602e7d231"
 uuid = "699a6c99-e7fa-54fc-8d76-47d257e15c1d"
 version = "0.9.4"
 
+[[deps.SimpleWeightedGraphs]]
+deps = ["Graphs", "LinearAlgebra", "Markdown", "SparseArrays", "Test"]
+git-tree-sha1 = "7d0b07df35fccf9b866a94bcab98822a87a3cb6f"
+uuid = "47aef6b3-ad0c-573a-a1e2-d07658019622"
+version = "1.3.0"
+
 [[deps.SnoopPrecompile]]
 deps = ["Preferences"]
 git-tree-sha1 = "e760a70afdcd461cf01a575947738d359234665c"
@@ -2303,11 +2353,18 @@ git-tree-sha1 = "4245283bee733122a9cb4545748d64e0c63337c0"
 uuid = "47a9eef4-7e08-11e9-0b38-333d64bd3804"
 version = "1.30.0"
 
+<<<<<<< Updated upstream
 [[deps.Sparspak]]
 deps = ["Libdl", "LinearAlgebra", "Logging", "OffsetArrays", "Printf", "SparseArrays", "Test"]
 git-tree-sha1 = "342cf4b449c299d8d1ceaf00b7a49f4fbc7940e7"
 uuid = "e56a9233-b9d6-4f03-8d0f-1825330902ac"
 version = "0.3.9"
+=======
+[[deps.SpatialIndexing]]
+git-tree-sha1 = "fb7041e6bd266266fa7cdeb80427579e55275e4f"
+uuid = "d4ead438-fe20-5cc5-a293-4fd39a41b74c"
+version = "0.1.3"
+>>>>>>> Stashed changes
 
 [[deps.SpecialFunctions]]
 deps = ["ChainRulesCore", "IrrationalConstants", "LogExpFunctions", "OpenLibm_jll", "OpenSpecFun_jll"]
@@ -2343,6 +2400,12 @@ version = "1.5.16"
 git-tree-sha1 = "6b7ba252635a5eff6a0b0664a41ee140a1c9e72a"
 uuid = "1e83bf80-4336-4d27-bf5d-d5a4f845583c"
 version = "1.4.0"
+
+[[deps.StaticGraphs]]
+deps = ["Graphs", "JLD2", "SparseArrays"]
+git-tree-sha1 = "855371d8fdfaed46dbb32a7c57a42db4441b9247"
+uuid = "4c8beaf5-199b-59a0-a7f2-21d17de635b6"
+version = "0.3.0"
 
 [[deps.StatisticalTraits]]
 deps = ["ScientificTypesBase"]
